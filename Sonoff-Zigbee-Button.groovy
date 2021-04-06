@@ -117,8 +117,7 @@ private Map getBatteryResult(rawValue) {
         result.value = Math.min(100, (int)(pct * 100))
         def linkText = getLinkText(device)
         result.descriptionText = "${linkText} battery was ${result.value}%"
-        sendEvent(name: "battery", value: 80, displayed: false)
-        return result
+        createEvent(result)
     }
 }
 
